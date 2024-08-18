@@ -1,0 +1,27 @@
+# Ignoring files to git
+
+## Ignore Python cache files
+
+**pycache**/
+\*.py[cod]
+
+## Ignore virtual environment directories
+
+venv/
+.env/
+
+## Ignore Django migration files
+
+_.pyc
+_.pyo
+_.pyd
+_.pdb
+_.egg
+_.egg-info/
+dist/
+build/
+\*.log
+
+## Ignore VS Code specific files
+
+.vscode/
