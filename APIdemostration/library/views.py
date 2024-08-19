@@ -21,12 +21,12 @@ def book_list(request): #pylint:disable=unused-argument
     return JsonResponse(book_data, safe=False)
 
 
-def author_list(request): #pylint:disable=unused-argument
+def writer_list(request): #pylint:disable=unused-argument
     """Return a list of all authors in the library."""
 
-    authors = Writer.objects.all() #pylint:disable=no-member
-    author_data = [
-        {"name": author.name}
-        for author in authors
+    writers = Writer.objects.all() #pylint:disable=no-member
+    writer_data = [
+        {"name": writer.name}
+        for writer in writers
     ]
-    return JsonResponse(author_data, safe=False)
+    return JsonResponse(writer_data, safe=False)
