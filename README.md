@@ -2,6 +2,66 @@
 
 This project demonstrates the implementation of a Django RESTful API using different approaches across multiple Git branches. Each branch offers the same functionality but implemented in a distinct way. The main goal is to create an API that returns JSON responses for two entities: 📚 **Books** and ✍️ **Writers**.
 
+## API endpoints
+## API endpoints
+
+The following are the API endpoints available for managing 📚 **Books** and ✍️ **Writers**:
+
+### Writers Endpoints ✍️
+
+- **List Writers**: 
+  - **Endpoint:** `/writers/`
+  - **Method:** `GET`
+  - **Description:** Retrieve a list of all writers.
+
+- **Create Writer**: 
+  - **Endpoint:** `/writers/`
+  - **Method:** `POST`
+  - **Description:** Add a new writer.
+
+- **Retrieve Writer**: 
+  - **Endpoint:** `/writers/<int:id>/`
+  - **Method:** `GET`
+  - **Description:** Retrieve details of a specific writer.
+
+- **Update Writer**: 
+  - **Endpoint:** `/writers/<int:id>/`
+  - **Method:** `PUT`
+  - **Description:** Update an existing writer.
+
+- **Delete Writer**: 
+  - **Endpoint:** `/writers/<int:id>/`
+  - **Method:** `DELETE`
+  - **Description:** Delete a writer.
+
+### Books Endpoints 📚
+
+- **List Books**: 
+  - **Endpoint:** `/books/`
+  - **Method:** `GET`
+  - **Description:** Retrieve a list of all books.
+
+- **Create Book**: 
+  - **Endpoint:** `/books/`
+  - **Method:** `POST`
+  - **Description:** Add a new book.
+
+- **Retrieve Book**: 
+  - **Endpoint:** `/books/<int:id>/`
+  - **Method:** `GET`
+  - **Description:** Retrieve details of a specific book.
+
+- **Update Book**: 
+  - **Endpoint:** `/books/<int:id>/`
+  - **Method:** `PUT`
+  - **Description:** Update an existing book.
+
+- **Delete Book**: 
+  - **Endpoint:** `/books/<int:id>/`
+  - **Method:** `DELETE`
+  - **Description:** Delete a book.
+
+
 ## 📋 Project Structure
 
 Below is a breakdown of the project branches and their respective implementations:
