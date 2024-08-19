@@ -3,7 +3,6 @@
 This project demonstrates the implementation of a Django RESTful API using different approaches across multiple Git branches. Each branch offers the same functionality but implemented in a distinct way. The main goal is to create an API that returns JSON responses for two entities: 📚 **Books** and ✍️ **Writers**.
 
 ## API endpoints
-## API endpoints
 
 The following are the API endpoints available for managing 📚 **Books** and ✍️ **Writers**:
 
