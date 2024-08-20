@@ -8,58 +8,65 @@ The following are the API endpoints available for managing 📚 **Books** and �
 
 ### Writers Endpoints ✍️
 
-- **List Writers**: 
+- **List Writers**:
+
   - **Endpoint:** `library/writers/`
   - **Method:** `GET`
   - **Description:** Retrieve a list of all writers.
 
-- **Create Writer**: 
+- **Create Writer**:
+
   - **Endpoint:** `library/writers/`
   - **Method:** `POST`
   - **Description:** Add a new writer.
 
-- **Retrieve Writer**: 
+- **Retrieve Writer**:
+
   - **Endpoint:** `library/writers/<int:id>/`
   - **Method:** `GET`
   - **Description:** Retrieve details of a specific writer.
 
-- **Update Writer**: 
+- **Update Writer**:
+
   - **Endpoint:** `library/writers/<int:id>/`
   - **Method:** `PUT`
   - **Description:** Update an existing writer.
 
-- **Delete Writer**: 
+- **Delete Writer**:
   - **Endpoint:** `library/writers/<int:id>/`
   - **Method:** `DELETE`
   - **Description:** Delete a writer.
 
 ### Books Endpoints 📚
 
-- **List Books**: 
+- **List Books**:
+
   - **Endpoint:** `library/books/`
   - **Method:** `GET`
   - **Description:** Retrieve a list of all books.
 
-- **Create Book**: 
+- **Create Book**:
+
   - **Endpoint:** `library/books/`
   - **Method:** `POST`
   - **Description:** Add a new book.
 
-- **Retrieve Book**: 
+- **Retrieve Book**:
+
   - **Endpoint:** `library/books/<int:id>/`
   - **Method:** `GET`
   - **Description:** Retrieve details of a specific book.
 
-- **Update Book**: 
+- **Update Book**:
+
   - **Endpoint:** `library/books/<int:id>/`
   - **Method:** `PUT`
   - **Description:** Update an existing book.
 
-- **Delete Book**: 
+- **Delete Book**:
   - **Endpoint:** `library/books/<int:id>/`
   - **Method:** `DELETE`
   - **Description:** Delete a book.
-
 
 ## 📋 Project Structure
 
