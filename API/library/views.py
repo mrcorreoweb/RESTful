@@ -1,7 +1,7 @@
 """Implement the views to return JSON responses for the following API endpoints:
 
 1. /books: Retrieve a list of all books in the library.
-2. /authors: Retrieve a list of all authors in the library."""
+2. /writers: Retrieve a list of all authors in the library."""
 
 from django.http import JsonResponse
 from .models import Book, Writer
@@ -22,7 +22,7 @@ def book_list(request): #pylint:disable=unused-argument
 
 
 def writer_list(request): #pylint:disable=unused-argument
-    """Return a list of all authors in the library."""
+    """Return a list of all writers in the library."""
 
     writers = Writer.objects.all() #pylint:disable=no-member
     writer_data = [
