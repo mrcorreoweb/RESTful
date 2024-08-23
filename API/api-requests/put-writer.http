@@ -1,0 +1,6 @@
+PUT http://127.0.0.1:8000/library/writers/6/
+Content-Type: application/json
+
+  {    
+    "name": "Luis Garcia Rey"
+  }

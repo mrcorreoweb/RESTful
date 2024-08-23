@@ -1,0 +1,7 @@
+PUT http://127.0.0.1:8000/library/books/41/
+Content-Type: application/json
+
+  {    
+    "title": "Animal Farm",
+    "writer": "George Orwell"
+  }
