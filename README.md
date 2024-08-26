@@ -1,4 +1,4 @@
-# 🚀 Learning APIs in Django 
+# 🚀 Learning APIs in Django
 
 This project demonstrates the implementation of a Django RESTful API using different approaches across multiple Git branches. Each branch offers the same functionality but implemented in a distinct way. The main goal is to create an API that returns JSON responses for two entities: 📚 **Books** and ✍️ **Writers**.
 
@@ -101,3 +101,69 @@ Below is a breakdown of the project branches and their respective implementation
 
 - **Approach:** DRF + ModelViewSets.
 - **Description:** Final evolution that leverages DRF’s `ModelViewSets` to simplify the codebase using built-in capabilities.
+
+## Setup Instructions
+
+### 1. Install Dependencies
+
+Make sure you have Python and pip installed, then install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Create the .env file
+
+In the project root, create a .env file to store environment-specific settings. This file should include the SECRET_KEY for Django and any other sensitive information. You can generate a new SECRET_KEY using the following Python command:
+
+```bash
+python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+```
+
+Once you have generated the secret key, create a .env file and add the following:
+
+```bash
+SECRET_KEY=your_generated_secret_key
+ALLOWED_HOSTS=localhost,127.0.0.1
+```
+
+### 3. Add .env to .gitignore
+
+To prevent sensitive information from being committed to version control, ensure the .env file is added to your .gitignore file. Open or create the .gitignore file in the root directory of your project, and add the following:
+
+```bash
+# Ignore .env file containing sensitive data
+.env
+```
+
+### 4. Run Migrations
+
+Apply the necessary database migrations by running the following command:
+
+```bash
+python manage.py migrate
+```
+
+### 5. Start the Development Server
+
+Once the migrations are complete, start the Django development server:
+
+```bash
+python manage.py runserver
+```
+
+Your API will now be accessible at <http://localhost:8000/library/(...)> completed with the appropriate endpoints (see [API endpoints](#api-endpoints)).
+
+### 6. Testing
+
+If you are using VSCode you can use the REST Client extension to send requests to the API.
+
+You will find files for the CRUD operations using REST Client in the test-api-request folder.
+
+## Contributing
+
+If you'd like to contribute to this project, please follow the contribution guidelines to get started.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.

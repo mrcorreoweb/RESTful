@@ -1,5 +1,9 @@
 # Ignoring files to git
 
+## Ignore enviroment variables for critical settings
+
+*.env
+
 ## Ignore Python cache files
 
 **pycache**/
