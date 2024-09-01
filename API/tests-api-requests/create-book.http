@@ -2,6 +2,6 @@ POST http://127.0.0.1:8000/library/books/
 Content-Type: application/json
 
   {
-    "title": "A Clash of Kings",
-    "writer": "George R.R. Martin"
+    "title": "Loor",
+    "writer": "Luis Garcia Rey"
   }
