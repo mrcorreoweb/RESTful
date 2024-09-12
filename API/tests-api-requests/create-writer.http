@@ -2,5 +2,5 @@ POST http://127.0.0.1:8000/library/writers/
 Content-Type: application/json
 
   {    
-    "name": "Carlos Ruiz Zafón"
+    "name": "Joseph Stiglitz"
   }

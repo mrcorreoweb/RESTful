@@ -1,11 +1,11 @@
 """Set up the url routes for the library application."""
 
 from django.urls import path
-from . import views
+from .views import WriterListView, WriterDetailView, BookListView, BookDetailView
 
 urlpatterns = [
-    path("writers/", views.writer_list, name="writer_list"),
-    path("writers/<int:writer_id>/", views.writer_detail, name="writer_detail"),
-    path("books/", views.book_list, name="book_list"),
-    path("books/<int:book_id>/", views.book_detail, name="book_detail"),
+    path("writers/", WriterListView.as_view(), name="writer_list"),
+    path("writers/<writer_id>/", WriterDetailView.as_view(), name="writer_detail"),
+    path("books/", BookListView.as_view(), name="book_list"),
+    path("books/<book_id>/", BookDetailView.as_view(), name="book_detail"),
 ]
