@@ -1,2 +1,0 @@
-DELETE http://127.0.0.1:8000/library/books/2/
-Content-Type: application/json
