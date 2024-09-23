@@ -14,7 +14,7 @@ For books:
 - DELETE, /books/<book_id>/, delete a specific book from the library.
 
 Method of implementation: 
-- Class Based Views (CBVs)
+- Django Rest Framework - Class Based Views (DRF-CBVs branch)
 """
 
 from rest_framework.response import Response
