@@ -1,11 +1,15 @@
 """Set up the url routes for the library application."""
 
-from django.urls import path
-from .views import WriterListView, WriterDetailView, BookListView, BookDetailView
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import WriterViewSet, BookViewSet
 
+# Create a router and register the ViewSets
+router = DefaultRouter()
+router.register(r'writers', WriterViewSet, basename='writer')
+router.register(r'books', BookViewSet, basename='book')
+
+# The API URLs are now determined automatically by the router.
 urlpatterns = [
-    path("writers/", WriterListView.as_view(), name="writer_list"),
-    path("writers/<int:writer_id>/", WriterDetailView.as_view(), name="writer_detail"),
-    path("books/", BookListView.as_view(), name="book_list"),
-    path("books/<int:book_id>/", BookDetailView.as_view(), name="book_detail"),
+    path('', include(router.urls)),
 ]
