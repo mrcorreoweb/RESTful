@@ -102,6 +102,11 @@ Below is a breakdown of the project branches and their respective implementation
 - **Approach:** DRF + ModelViewSets.
 - **Description:** Final evolution that leverages DRF’s `ModelViewSets` to simplify the codebase using built-in capabilities.
 
+### 🧵 Branch: `DRF-HMSs`
+
+- **Approach:** DRF + ModelViewSets + HyperlinkedModelSerializers.
+- **Description:** From DRF’s `ModelViewSets` change serializers to use API urls as primary keys.
+
 ## Setup Instructions
 
 ### 1. Install Dependencies
