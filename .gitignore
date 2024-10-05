@@ -26,6 +26,6 @@ dist/
 build/
 \*.log
 
-## Ignore VS Code specific files
-
-.vscode/
+## to Ignore VS Code specific files
+## Uncomment the following line
+# .vscode/
