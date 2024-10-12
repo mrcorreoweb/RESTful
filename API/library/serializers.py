@@ -1,17 +1,21 @@
 from rest_framework import serializers
 from .models import Writer, Book
 
-class WriterSerializer(serializers.ModelSerializer):
+class WriterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Writer
-        fields = ['id', 'name']
+        fields = ['url', 'id', 'name']
 
-class BookSerializer(serializers.ModelSerializer):
-    writer = serializers.CharField()  # Accept writer name as a string
+class BookSerializer(serializers.HyperlinkedModelSerializer):
+    # Use HyperlinkedRelatedField to link to the Writer model
+    writer = serializers.HyperlinkedRelatedField(view_name='writer-detail', queryset=Writer.objects.all())
+    # Additional field to return the writer name
+    writer_name = serializers.CharField(source='writer.name', read_only=True)
 
     class Meta:
         model = Book
-        fields = ['id', 'title', 'writer']
+        # Include both the writer's url and his name
+        fields = ['url', 'id', 'title', 'writer', 'writer_name']
 
     def create(self, validated_data):
         # Extract writer name from validated data
