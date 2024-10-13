@@ -1,6 +1,8 @@
-# 🚀 Learning APIs in Django
+# 🚀 Same API in Django in 9 different ways
 
-This project demonstrates the implementation of a Django RESTful API using different approaches across multiple Git branches. Each branch offers the same functionality but implemented in a distinct way. The main goal is to create an API that returns JSON responses for two entities: 📚 **Books** and ✍️ **Writers**.
+This project demonstrates the implementation of a Django RESTful API using 9⃣️ different approaches across multiple Git branches. Each branch offers the same functionality but implemented in a distinct way. 
+
+The main goal is to create an API that returns JSON responses for two entities: 📚 **Books** and ✍️ **Writers**.
 
 ## API endpoints
 
@@ -91,6 +93,16 @@ Below is a breakdown of the project branches and their respective implementation
 
 - **Approach:** DRF + Class-Based Views.
 - **Description:** Extends the CBV pattern by using DRF's `APIView` class and response modules.
+
+### 🌿 Branch: `DRF-Mixins`
+
+- **Approach:** DRF + Mixins.
+- **Description:** Re-implements the API using DRF's mixins for common actions like `list`, `create`, `retrieve`, `update`, and `destroy`.
+
+### 🌳 Branch: `DRF-GenericCBVs`
+
+- **Approach:** DRF + Generic Class-Based Views.
+- **Description:** Implements the API using DRF's generic class-based views, providing a more concise and reusable structure for common patterns.
 
 ### 🧰 Branch: `DRF-CBVs-ViewSets`
 
