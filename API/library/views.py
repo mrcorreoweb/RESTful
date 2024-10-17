@@ -14,17 +14,17 @@ For books:
 - DELETE, /books/<book_id>/, delete a specific book from the library.
 
 Method of implementation: 
-- Django Rest Framework - DRF + Generic Class-Based Views (DRF-GenericCBVs)
-- Implements the API using DRF's generic class-based views, 
-providing a more concise and reusable structure for common patterns.
+- Django Rest Framework - DRF + Mixins (DRF-Mixins)
+- implements the API using DRF's mixins for common actions
+like list, create, retrieve, update, and destroy.
 """
 
-from rest_framework import generics
+from rest_framework import generics, mixins
 from .models import Book, Writer
 from .serializers import BookSerializer, WriterSerializer
 
 # Writers Endpoints
-class WriterListCreateView(generics.ListCreateAPIView):
+class WriterListCreateView(generics.GenericAPIView, mixins.ListModelMixin, mixins.CreateModelMixin):
     """
     GET, /writers/, return a list of all writers in the library.        
     POST, /writers/, create a new writer in the library
@@ -32,7 +32,13 @@ class WriterListCreateView(generics.ListCreateAPIView):
     queryset = Writer.objects.all()
     serializer_class = WriterSerializer
 
-class WriterRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+    def get(self, request):
+        return self.list(request)
+
+    def post(self, request):
+        return self.create(request)
+
+class WriterRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
     """
     GET, /writers/<writer_id>/, return the details of a specific writer    
     PUT, /writers/<writer_id>/, update the details of a specific writer
@@ -41,9 +47,18 @@ class WriterRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Writer.objects.all()
     serializer_class = WriterSerializer
     lookup_field = 'id'
+
+    def get(self, request, id):
+        return self.retrieve(request, id)
+
+    def put(self, request, id):
+        return self.update(request, id)
+
+    def delete(self, request, id):
+        return self.destroy(request, id)
             
 # Books Endpoints
-class BookListCreateView(generics.ListCreateAPIView):
+class BookListCreateView(generics.ListCreateAPIView, mixins.ListModelMixin, mixins.CreateModelMixin):
     """
     GET, /books/, return a list of all books in the library.        
     POST, /books/, create a new book in the library.
@@ -51,7 +66,13 @@ class BookListCreateView(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
-class BookRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+    def get(self, request):
+        return self.list(request)
+
+    def post(self, request):
+        return self.create(request)
+
+class BookRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
     """
     GET, /books/<book_id>/, return the details of a specific book    
     PUT, /books/<book_id>/, update the details of a specific book
@@ -60,3 +81,12 @@ class BookRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     lookup_field = 'id'
+
+    def get(self, request, id):
+        return self.retrieve(request, id)
+
+    def put(self, request, id):
+        return self.update(request, id)
+
+    def delete(self, request, id):
+        return self.destroy(request, id)
