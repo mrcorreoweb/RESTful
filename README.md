@@ -1,4 +1,4 @@
-# 🚀 Marter of APIs: Same API in Django in 9 different ways!
+# 🚀 Master of APIs: Same API in Django in 9 different ways!
 
 This project demonstrates the implementation of a Django RESTful API using 9⃣️ different approaches across multiple Git branches. Each branch offers the same functionality but implemented in a distinct way.
 
